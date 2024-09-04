@@ -13,6 +13,7 @@ Website - Under Construction. Currently in the works of handling the problem of 
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
+* [![JavaScript][JavaScript.com]][JavaScript-url]
 
 
 
@@ -28,3 +29,5 @@ Website - Under Construction. Currently in the works of handling the problem of 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[JavaScript.com]: https://img.shields.io/badge/JavaScript-grey?style=for-the-badge&logo=javascript
+[JavaScript-url]: https://JavaScript.com 
