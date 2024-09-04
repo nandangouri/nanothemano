@@ -19,7 +19,7 @@ Website - Under Construction. Currently in the works of handling the problem of 
 ![guilty-gear-strive-ky-kiske-2215663241](https://github.com/user-attachments/assets/bb37b4bf-f2e3-48b0-b5f4-15c089e296e1)
 
 
-[Java.com]: https://img.shields.io/badge/Java-white?style=for-the-badge&logo=java
+[Java.com]: https://img.shields.io/badge/Java-orange?style=for-the-badge&logo=openjdk
 [Java-url]: https://java.com 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
