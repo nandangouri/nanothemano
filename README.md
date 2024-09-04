@@ -10,7 +10,7 @@ HashbrownHashers - a recipe sharing website with the ability to create, update, 
 Website - Under Construction. Currently in the works of handling the problem of youtube playlist that is too long. :)
 
 ## Languages 
- [![React][React.js]][React-url] [![Bootstrap][Bootstrap.com]][Bootstrap-url] [![JQuery][JQuery.com]][JQuery-url] [![JavaScript][JavaScript.com]][JavaScript-url]
+ [![React][React.js]][React-url] [![Bootstrap][Bootstrap.com]][Bootstrap-url] [![JQuery][JQuery.com]][JQuery-url] [![JavaScript][JavaScript.com]][JavaScript-url] [![Docker][Docker.com]][Docker-url]
 
 
 
@@ -29,4 +29,4 @@ Website - Under Construction. Currently in the works of handling the problem of 
 [JavaScript.com]: https://img.shields.io/badge/JavaScript-grey?style=for-the-badge&logo=javascript
 [JavaScript-url]: https://JavaScript.com 
 [Docker.com]: https://img.shields.io/badge/Docker-#1f6feb?style=for-the-badge&logo=docker
-[JavaScript-url]: https://docker.com 
+[Docker-url]: https://docker.com 
