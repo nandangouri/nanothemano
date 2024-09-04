@@ -31,5 +31,5 @@ Website - Under Construction. Currently in the works of handling the problem of 
 [JavaScript-url]: https://JavaScript.com 
 [Docker.com]: https://img.shields.io/badge/Docker-%230db7ed?style=for-the-badge&logo=docker&logoColor=white
 [Docker-url]: https://docker.com 
-[MySQL.com]: https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff
+[MySQL.com]: https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=fff
 [MySQL-url]: https://MySQL.com 
