@@ -10,7 +10,7 @@ HashbrownHashers - a recipe sharing website with the ability to create, update, 
 Website - Under Construction. Currently in the works of handling the problem of youtube playlist that is too long. :)
 
 ## Languages 
- [![React][React.js]][React-url] [![Bootstrap][Bootstrap.com]][Bootstrap-url] [![JQuery][JQuery.com]][JQuery-url] [![JavaScript][JavaScript.com]][JavaScript-url] [![Docker][Docker.com]][Docker-url]
+ [![React][React.js]][React-url] [![Bootstrap][Bootstrap.com]][Bootstrap-url] [![JQuery][JQuery.com]][JQuery-url] [![JavaScript][JavaScript.com]][JavaScript-url] [![Docker][Docker.com]][Docker-url] [![Java][Java.com]][Java-url]
 
 
 
@@ -19,7 +19,8 @@ Website - Under Construction. Currently in the works of handling the problem of 
 ![guilty-gear-strive-ky-kiske-2215663241](https://github.com/user-attachments/assets/bb37b4bf-f2e3-48b0-b5f4-15c089e296e1)
 
 
-
+[Java.com]: https://img.shields.io/badge/Java-white?style=for-the-badge&logo=java
+[Java-url]: https://java.com 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
