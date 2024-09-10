@@ -40,7 +40,7 @@ build/
 
 ### Environment ###
 src/main/resources/
-src/sql/
+.sql
 
 # dependencies
 node_modules/
