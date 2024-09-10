@@ -38,7 +38,7 @@ public class SiivagunnerService {
     public Result<Siivagunner> checker(Siivagunner siivagunner) {
         Result<Siivagunner> result = new Result<>();
         if (siivagunner == null) {
-            result.addMessage("review cannot be empty.", ResultType.INVALID);
+            result.addMessage("Siivagunner cannot be empty.", ResultType.INVALID);
             return result;
         }
         try (ValidatorFactory factory = Validation.buildDefaultValidatorFactory()){

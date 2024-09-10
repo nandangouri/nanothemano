@@ -1,2 +1,2 @@
 
-GET 
+GET https://www.googleapis.com/youtube/v3/playlistItems?part=id%2CcontentDetails%2Csnippet&key=AIzaSyDXDX5iKO8b2FQzAqp7sr3uACw7nEYZy7U&playlistId=UULF9ecwl3FTG66jIKA9JRDtmg&maxResults=50

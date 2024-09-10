@@ -21,6 +21,7 @@ public class SiivagunnerController {
 
     @PostMapping
     public ResponseEntity<Object> add(@RequestBody Siivagunner siivagunner){
+
         Result<Siivagunner> result = service.add(siivagunner);
         if(result.isSuccess()){
             return new ResponseEntity<>(result.getPayload(), HttpStatus.CREATED);
