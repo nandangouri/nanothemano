@@ -41,6 +41,7 @@ build/
 ### Environment ###
 /backend/src/main/resources/
 /backend/src/sql
+/backend/src/test/resources/
 
 # dependencies
 node_modules/
