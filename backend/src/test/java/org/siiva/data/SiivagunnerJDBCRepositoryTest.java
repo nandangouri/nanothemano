@@ -33,7 +33,7 @@ class SiivagunnerJDBCRepositoryTest {
     @Test
     void add() {
         Siivagunner expected = new Siivagunner( 4, "testtest",
-                "addnew" , false, false, true);
+                "addnew" , false, false, true, false);
         Siivagunner actual = repository.add(expected);
         assertEquals(expected, actual);
     }
@@ -42,7 +42,7 @@ class SiivagunnerJDBCRepositoryTest {
     void ShouldgetById() {
         Siivagunner actual = repository.getById(1);
         Siivagunner expected = new Siivagunner( 1, "Z6gf4rqhYxk",
-                "Monochrome (PAL-M Version) - Hotel Dusk: Room 215" , false, false, true);
+                "Monochrome (PAL-M Version) - Hotel Dusk: Room 215" , false, false, true, false);
         assertEquals(expected, actual);
     }
 

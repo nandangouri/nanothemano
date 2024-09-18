@@ -17,14 +17,17 @@ public class Siivagunner {
     private boolean worth_listening = false;
     private boolean vocals = false;
     private boolean listened = false;
+    private boolean favorite = false;
 
-    public Siivagunner(int siivagunner_id, String youtube_link, String title, boolean worth_listening, boolean vocals, boolean listened) {
+    public Siivagunner(int siivagunner_id, String youtube_link, String title, boolean worth_listening,
+                       boolean vocals, boolean listened, boolean favorite) {
         this.siivagunner_id = siivagunner_id;
         this.youtube_link = youtube_link;
         this.title = title;
         this.worth_listening = worth_listening;
         this.vocals = vocals;
         this.listened = listened;
+        this.favorite = favorite;
     }
 
     public Siivagunner() {
@@ -74,10 +77,18 @@ public class Siivagunner {
         return siivagunner_id;
     }
 
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(siivagunner_id, youtube_link, title, worth_listening, vocals, listened);
+        return Objects.hash(siivagunner_id, youtube_link, title, worth_listening, vocals, listened, favorite);
     }
 
     @Override
@@ -85,6 +96,9 @@ public class Siivagunner {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Siivagunner that = (Siivagunner) o;
-        return siivagunner_id == that.siivagunner_id && worth_listening == that.worth_listening && vocals == that.vocals && listened == that.listened && Objects.equals(youtube_link, that.youtube_link) && Objects.equals(title, that.title);
+        return siivagunner_id == that.siivagunner_id && worth_listening == that.worth_listening
+                && vocals == that.vocals && listened == that.listened
+                && Objects.equals(youtube_link, that.youtube_link) && Objects.equals(title, that.title)
+                && Objects.equals(favorite, that.favorite);
     }
 }

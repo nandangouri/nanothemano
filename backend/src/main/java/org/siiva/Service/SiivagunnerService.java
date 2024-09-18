@@ -35,6 +35,8 @@ public class SiivagunnerService {
             return result;
     }
 
+    public Result<String> updateNew(siivag)
+
     public Result<Siivagunner> checker(Siivagunner siivagunner) {
         Result<Siivagunner> result = new Result<>();
         if (siivagunner == null) {

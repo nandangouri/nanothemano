@@ -4,10 +4,10 @@ public class KeepTrack {
 
 
     private int keeptrackId;
-    private int youtube_link;
+    private String youtube_link;
     private int siivagunnerId;
 
-    public KeepTrack(int keeptrackId, int youtube_link, int siivagunnerId) {
+    public KeepTrack(int keeptrackId, String youtube_link, int siivagunnerId) {
         this.keeptrackId = keeptrackId;
         this.youtube_link = youtube_link;
         this.siivagunnerId = siivagunnerId;
@@ -24,11 +24,11 @@ public class KeepTrack {
         this.keeptrackId = keeptrackId;
     }
 
-    public int getYoutube_link() {
+    public String getYoutube_link() {
         return youtube_link;
     }
 
-    public void setYoutube_link(int youtube_link) {
+    public void setYoutube_link(String youtube_link) {
         this.youtube_link = youtube_link;
     }
 

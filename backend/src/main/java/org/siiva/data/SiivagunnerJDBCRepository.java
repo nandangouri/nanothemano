@@ -38,7 +38,7 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
      * @param video_id - video id to reset to. aka siivagunner uploaded 30 new songs, video id
      *                 of the one to stop at, and then compare it to the videos uploaded
      * @param songs - all the songs need to be added.
-     * @return - latest video id;
+     * @return - latest video id, if null, knows to keep going;
      */
     @Override
     public String updateNew(String video_id, List<Siivagunner> songs) {
@@ -59,7 +59,7 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
     @Override
     public Siivagunner add(Siivagunner siivagunner) {
         String sql = "INSERT INTO siivagunner (youtube_link, title, worth_listening, " +
-                "vocals, listened) values(?,?,?,?,?);";
+                "vocals, listened, favorite) values(?,?,?,?,?,?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
@@ -69,6 +69,7 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
             ps.setBoolean(3,siivagunner.isWorth_listening());
             ps.setBoolean(4,siivagunner.isVocals());
             ps.setBoolean(5,siivagunner.isListened());
+            ps.setBoolean(6,siivagunner.isFavorite());
             return ps;
         }, keyHolder);
         if (rowsAffected <= 0){
@@ -107,7 +108,8 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
                 "title = ?, " +
                 "worth_listening = ?, " +
                 "vocals = ?, " +
-                "listened = ? " +
+                "listened = ?, " +
+                "favorite = ?" +
                 "where siivagunner_id = ? ;";
 
         return jdbcTemplate.update(sql,
@@ -116,6 +118,7 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
                 siivagunner.isWorth_listening(),
                 siivagunner.isVocals(),
                 siivagunner.isListened(),
+                siivagunner.isFavorite(),
                 siivagunner.getSiivagunner_id()) > 0;
     }
 

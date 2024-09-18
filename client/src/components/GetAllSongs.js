@@ -2,7 +2,7 @@
 export default function GetAllSongs() { 
 
     const apiurl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${process.env.REACT_APP_API_KEY}&playlistId=UULF9ecwl3FTG66jIKA9JRDtmg&maxResults=50`
-    const url = "http://localhost:8080/siivagunner";
+    const url = "http://localhost:8080";
 
     
     const addSongs = (data) => { 
@@ -25,9 +25,20 @@ export default function GetAllSongs() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+
             },
             body: JSON.stringify(siivag)
         };
+
+    fetch(`${url}/api/siivagunner`, init).then(
+        response => {
+            if (response.status === 201 || response.status === 400) {
+                return response.json();
+            } else {
+                return Promise.reject(`Unexpected status code: ${response.status}`);
+            }
+        }
+    )
 
         
 
