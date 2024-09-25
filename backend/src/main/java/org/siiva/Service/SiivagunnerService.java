@@ -35,7 +35,17 @@ public class SiivagunnerService {
             return result;
     }
 
-    public Result<String> updateNew(siivag)
+    public Result<Siivagunner> update(Siivagunner siivagunner) {
+            Result<Siivagunner> result = checker(siivagunner);
+            if (result.isSuccess()) {
+                if(!Siivagunnerrepository.update(siivagunner)) {
+                    String msg = String.format("The song with videoID: % could not be found.",
+                            siivagunner.getVideo_id());
+                    result.addMessage(msg, ResultType.INVALID);
+                }
+            }
+            return result;
+    }
 
     public Result<Siivagunner> checker(Siivagunner siivagunner) {
         Result<Siivagunner> result = new Result<>();

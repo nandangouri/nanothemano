@@ -13,7 +13,6 @@ public class KeepTrackMapper {
         keepTrack.setKeeptrackId(resultSet.getInt(0));
         keepTrack.setYoutube_link(resultSet.getString(1));
         keepTrack.setSiivagunnerId(resultSet.getInt(2));
-        
         return keepTrack;
     }
 }

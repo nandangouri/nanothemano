@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.List;
+import java.sql.Date;
 
 @Repository
 public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
@@ -43,7 +45,7 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
     @Override
     public String updateNew(String video_id, List<Siivagunner> songs) {
         for (Siivagunner siiva : songs) {
-            if(siiva.getYoutube_link().equals(video_id)) {
+            if(siiva.getVideo_id().equals(video_id)) {
                 return video_id;
             } else {
                 add(siiva);
@@ -58,18 +60,19 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
      */
     @Override
     public Siivagunner add(Siivagunner siivagunner) {
-        String sql = "INSERT INTO siivagunner (youtube_link, title, worth_listening, " +
-                "vocals, listened, favorite) values(?,?,?,?,?,?);";
+        String sql = "INSERT INTO siivagunner (video_id, title, worth_listening, " +
+                "vocals, listened, favorite, datepublished) values(?,?,?,?,?,?,?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1,siivagunner.getYoutube_link());
+            ps.setString(1,siivagunner.getVideo_id());
             ps.setString(2,siivagunner.getTitle());
             ps.setBoolean(3,siivagunner.isWorth_listening());
             ps.setBoolean(4,siivagunner.isVocals());
             ps.setBoolean(5,siivagunner.isListened());
             ps.setBoolean(6,siivagunner.isFavorite());
+            ps.setTimestamp(7, siivagunner.getDatepublished());
             return ps;
         }, keyHolder);
         if (rowsAffected <= 0){
@@ -96,29 +99,33 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
 
     @Override
     public Siivagunner getByVideoId(String video_id) {
-        String sql = "SELECT * FROM siivagunner WHERE youtube_link = '?'";
+        String sql = "SELECT * FROM siivagunner WHERE video_id = '?'";
 
         return jdbcTemplate.query(sql, new SiivagunnerMapper(), video_id).stream().findFirst().orElse(null);
     }
 
+    //Updates Row table based on what the youtube video Id is. Youtube video ids are unique. 
     @Override
     public boolean update(Siivagunner siivagunner) {
         String sql = "UPDATE siivagunner SET " +
-                "youtube_link = ?, " +
+                "siivagunner_id = ?, " +
                 "title = ?, " +
                 "worth_listening = ?, " +
                 "vocals = ?, " +
                 "listened = ?, " +
-                "favorite = ?" +
-                "where siivagunner_id = ? ;";
+                "favorite = ?," +
+                "datepublished = ?" +
+                "where video_id = ?;";
 
         return jdbcTemplate.update(sql,
-                siivagunner.getYoutube_link(),
+                siivagunner.getSiivagunner_id(),
                 siivagunner.getTitle(),
                 siivagunner.isWorth_listening(),
                 siivagunner.isVocals(),
                 siivagunner.isListened(),
                 siivagunner.isFavorite(),
+                siivagunner.getDatepublished(),
+                siivagunner.getVideo_id(),
                 siivagunner.getSiivagunner_id()) > 0;
     }
 

@@ -12,11 +12,12 @@ public class SiivagunnerMapper implements RowMapper<Siivagunner> {
 
         Siivagunner siivagunner = new Siivagunner();
         siivagunner.setSiivagunner_id(resultSet.getInt("siivagunner_id"));
-        siivagunner.setYoutube_link(resultSet.getString("youtube_link"));
+        siivagunner.setVideo_id(resultSet.getString("video_id"));
         siivagunner.setTitle(resultSet.getString("title"));
         siivagunner.setListened(resultSet.getBoolean("listened"));
         siivagunner.setWorth_listening(resultSet.getBoolean("worth_listening"));
         siivagunner.setVocals(resultSet.getBoolean("vocals"));
+        siivagunner.setDatepublished(resultSet.getTimestamp("date_published"));
         return siivagunner;
     }
 }

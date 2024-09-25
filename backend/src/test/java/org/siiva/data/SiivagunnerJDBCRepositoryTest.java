@@ -7,6 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Calendar;
+
 import static org.junit.jupiter.api.Assertions.*;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
@@ -33,7 +38,7 @@ class SiivagunnerJDBCRepositoryTest {
     @Test
     void add() {
         Siivagunner expected = new Siivagunner( 4, "testtest",
-                "addnew" , false, false, true, false);
+                "addnew" , false, false, true, false, Timestamp.valueOf("2024-09-04T21:07:17Z"));
         Siivagunner actual = repository.add(expected);
         assertEquals(expected, actual);
     }
@@ -42,7 +47,8 @@ class SiivagunnerJDBCRepositoryTest {
     void ShouldgetById() {
         Siivagunner actual = repository.getById(1);
         Siivagunner expected = new Siivagunner( 1, "Z6gf4rqhYxk",
-                "Monochrome (PAL-M Version) - Hotel Dusk: Room 215" , false, false, true, false);
+                "Monochrome (PAL-M Version) - Hotel Dusk: Room 215" , false, false,
+                true, false, Timestamp.valueOf("2024-09-04T21:07:17Z"));
         assertEquals(expected, actual);
     }
 
