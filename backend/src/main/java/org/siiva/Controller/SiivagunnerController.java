@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/siivagunner")
@@ -23,6 +25,16 @@ public class SiivagunnerController {
     public ResponseEntity<Object> add(@RequestBody Siivagunner siivagunner){
 
         Result<Siivagunner> result = service.add(siivagunner);
+        if(result.isSuccess()){
+            return new ResponseEntity<>(result.getPayload(), HttpStatus.CREATED);
+        }
+        return ErrorResponse.build(result);
+    }
+
+    @PutMapping("/date")
+    public ResponseEntity<Object> add(@RequestBody String video_id, Date datepub) {
+
+        Result<Siivagunner> result = service.updateDate(video_id, datepub);
         if(result.isSuccess()){
             return new ResponseEntity<>(result.getPayload(), HttpStatus.CREATED);
         }

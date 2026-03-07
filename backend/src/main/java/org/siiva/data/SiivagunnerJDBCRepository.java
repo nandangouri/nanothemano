@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-import java.sql.Timestamp;
 import java.util.List;
 import java.sql.Date;
 
@@ -130,20 +129,30 @@ public class SiivagunnerJDBCRepository implements SiivagunnerRepository {
     }
 
     @Override
-    public boolean updateListened(int song, boolean listened) {
+    public boolean updateListened(String song, boolean listened) {
         String sql = "UPDATE siivagunner SET " +
                 "listened = ? " +
-                "where siivagunner_id = ? ;";
+                "where video_id = ? ;";
 
         return jdbcTemplate.update(sql,
                 listened, song) > 0;
     }
+    @Override
+    //temporary update. to update the dates of all the songs.
+    public boolean updateDate(String song, Date datepub) {
+        String sql = "UPDATE siivagunner SET " +
+                "datepublished = ? " +
+                "where video_id = ? ;";
+
+        return jdbcTemplate.update(sql,
+                datepub, song) > 0;
+    }
 
     @Override
-    public boolean updateWorth(int song, boolean worth) {
+    public boolean updateWorth(String song, boolean worth) {
         String sql = "UPDATE siivagunner SET " +
                 "worth_listening = ? " +
-                "where siivagunner_id = ? ;";
+                "where video_id = ? ;";
 
         return jdbcTemplate.update(sql,
                 worth, song) > 0;

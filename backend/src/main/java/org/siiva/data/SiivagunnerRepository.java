@@ -2,6 +2,7 @@ package org.siiva.data;
 
 import org.siiva.Model.Siivagunner;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface SiivagunnerRepository {
@@ -17,10 +18,11 @@ public interface SiivagunnerRepository {
 
     public boolean update(Siivagunner siivagunner);
 
-    public boolean updateListened(int song, boolean listened);
+    public boolean updateListened(String song, boolean listened);
 
-    public boolean updateWorth(int song, boolean listened);
+    public boolean updateWorth(String song, boolean listened);
 
+    public boolean updateDate(String song, Date datepub);
 
     public List<Siivagunner> getAll();
 

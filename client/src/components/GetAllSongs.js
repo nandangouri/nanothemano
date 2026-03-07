@@ -60,16 +60,13 @@ export default function GetAllSongs() {
                 getSongs(nextpagecall);
             }
         }
+    
     ).catch(console.log);
+    
     }
 
-    const  getallFUCKINGSONGS = ()  => {
-        getSongs(apiurl);
-        }
-    
-
     return(<>
-    <button onClick={() => getallFUCKINGSONGS()}> Test Data format </button>
         
+    
     </>)
 }

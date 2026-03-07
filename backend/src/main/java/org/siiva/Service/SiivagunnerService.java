@@ -10,6 +10,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import java.sql.Date;
 import java.util.Set;
 
 @Service
@@ -45,6 +46,17 @@ public class SiivagunnerService {
                 }
             }
             return result;
+    }
+
+    public Result<Siivagunner> updateDate(String videoid, Date datepub) {
+        Result<Siivagunner> result = new Result<>();
+            if(!Siivagunnerrepository.updateDate(videoid, datepub)) {
+                String msg = String.format("The song with videoID: % could not be found.",
+                        videoid);
+                result.addMessage(msg, ResultType.INVALID);
+
+        }
+        return result;
     }
 
     public Result<Siivagunner> checker(Siivagunner siivagunner) {
